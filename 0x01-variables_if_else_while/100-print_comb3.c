@@ -11,7 +11,6 @@
 int main(void)
 {
 	int x;
-	int a, b;
 
 	for (x = 0; x < 100 ; x++)
 	{
