@@ -4,7 +4,7 @@
  * main - entry point
  *
  * code description: prints all numbers of base 16 in lowercase
- * Return: 0 means success
+ * Return: Always 0 (success)
  */
 
 int main(void)
