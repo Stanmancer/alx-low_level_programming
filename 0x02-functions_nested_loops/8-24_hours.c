@@ -8,10 +8,10 @@
 
 void jack_bauer(void)
 {
-	int i = 0;
+	int i;
 	int a;
 
-	if (i < 24)
+	for (i = 0; i < 24; i++)
 	{
 		for (a = 0; a < 60; a++)
 		{
@@ -26,7 +26,6 @@ void jack_bauer(void)
 		if (a == 59)
 		{
 			a = 0;
-			i++;
 		}
 	}
 }
