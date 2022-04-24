@@ -10,8 +10,7 @@ int main(void)
 {
 	char c = '_';
 
-	do
-	{
+	do {
 		_putchar(c);
 		if (c == '_')
 			c = 'p';
@@ -23,11 +22,13 @@ int main(void)
 			c = 'c';
 		else if (c == 'c')
 			c = 'h';
-		else if ( c == 'h')
+		else if (c == 'h')
 			c = 'a';
 		else if (c == 'a')
 			c = 'r';
 		else if (c == 'r')
+			c = '\n';
+		else if (c == '\n')
 			c = 'z';
 	} while (c != 'z');
 
