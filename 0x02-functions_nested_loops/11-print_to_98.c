@@ -11,6 +11,13 @@ void print_to_98(int n)
 {
 	int i;
 
+	if (n == 98)
+	{
+		do {
+			greater_than_98(n);
+			break;
+		}
+	}
 	for (i = n; i <= 98; i++)
 	{
 		if (i < 0)
@@ -41,6 +48,7 @@ void print_to_98(int n)
 			_putchar(',');
 			_putchar(' ');
 		}
+		_putchar('\n');
 	}
 
 	greater_than_98(n);
@@ -57,7 +65,7 @@ void greater_than_98(int n)
 {
 	int i;
 
-	for (i = n; i > 98; i--)
+	for (i = n; i >= 98; i--)
 	{
 		if (i >= 100)
 		{
@@ -72,4 +80,5 @@ void greater_than_98(int n)
 		_putchar(',');
 		_putchar(' ');
 	}
+	 _putchar('\n');
 }
