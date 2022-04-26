@@ -48,13 +48,13 @@ void print_to_98(int n)
 
 /**
  * greater_than_98 - computes for values greater than 98
+ * @n: number passed to function
  *
  * return: always 1
  */
 
-void greater_than_98(void)
+void greater_than_98(int n)
 {
-	int n;
 	int i;
 
 	for (i = n; i > 98; i--)
