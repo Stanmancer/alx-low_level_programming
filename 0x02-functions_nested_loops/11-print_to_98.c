@@ -13,44 +13,43 @@ void print_to_98(int n)
 
 	if (n == 98)
 	{
-		do {
-			greater_than_98(n);
-			break;
-		}
+		greater_than_98(n);
 	}
-	for (i = n; i <= 98; i++)
+	else
 	{
-		if (i < 0)
+		for (i = n; i <= 98; i++)
 		{
-			_putchar('-');
-			i = (i * -1);
-
-			if (i >= 100)
+			if (i < 0)
 			{
-				_putchar((i / 100) + '0');
-				_putchar(((i / 10) % 10) + '0');
-				_putchar((i % 10) + '0');
-			} else if (i < 100 && i >= 10)
+				_putchar('-');
+				i = (i * -1);
+
+				if (i >= 100)
+				{
+					_putchar((i / 100) + '0');
+					_putchar(((i / 10) % 10) + '0');
+					_putchar((i % 10) + '0');
+				} else if (i < 100 && i >= 10)
+				{
+					_putchar((i / 10) + '0');
+					_putchar((i % 10) + '0');
+				} else if (i < 10)
+					_putchar(i + '0');
+			} else if (i > 0 && i < 10)
+				_putchar(i + '0');
+			else if (i > 10)
 			{
 				_putchar((i / 10) + '0');
 				_putchar((i % 10) + '0');
-			} else if (i < 10)
-				_putchar(i + '0');
-		} else if (i > 0 && i < 10)
-			_putchar(i + '0');
-		else if (i > 10)
-		{
-			_putchar((i / 10) + '0');
-			_putchar((i % 10) + '0');
+			}
+			while (n != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			_putchar('\n');
 		}
-		while (n != 98)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-		_putchar('\n');
 	}
-
 	greater_than_98(n);
 }
 
