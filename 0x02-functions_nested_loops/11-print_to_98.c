@@ -54,7 +54,8 @@ void print_to_98(int n)
 
 void greater_than_98(void)
 {
-	int n, i;
+	int n;
+	int i;
 
 	for (i = n; i > 98; i--)
 	{
