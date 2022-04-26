@@ -53,7 +53,7 @@ void print_to_98(int n)
  * return: always 1
  */
 
-void greater_than_98(int n)
+int greater_than_98(int n)
 {
 	int i;
 
