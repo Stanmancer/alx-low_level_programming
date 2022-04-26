@@ -14,8 +14,7 @@ void print_to_98(int n)
 	if (n == 98)
 	{
 		greater_than_98(n);
-	}
-	else
+	} else
 	{
 		for (i = n; i <= 98; i++)
 		{
@@ -42,15 +41,15 @@ void print_to_98(int n)
 				_putchar((i / 10) + '0');
 				_putchar((i % 10) + '0');
 			}
-			while (n != 98)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
 			_putchar('\n');
 		}
+		while (i != 98)
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
+		greater_than_98(n);
 	}
-	greater_than_98(n);
 }
 
 /**
@@ -76,8 +75,11 @@ void greater_than_98(int n)
 			_putchar((i / 10) + '0');
 			_putchar((i % 10) + '0');
 		}
-		_putchar(',');
-		_putchar(' ');
+		while (i != 98)
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
 	}
 	 _putchar('\n');
 }
