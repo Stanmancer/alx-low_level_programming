@@ -22,27 +22,27 @@ void print_to_98(int n)
 			if (i < 0)
 			{
 				_putchar('-');
-				i = (i * -1);
+				r = (i * -1);
 
-				if (i >= 100)
+				if (r >= 100)
 				{
-					_putchar((i / 100) + '0');
-					_putchar(((i / 10) % 10) + '0');
-					_putchar((i % 10) + '0');
-				} else if (i < 100 && i >= 10)
+					_putchar((r / 100) + '0');
+					_putchar(((r / 10) % 10) + '0');
+					_putchar((r % 10) + '0');
+				} else if (r < 100 && r >= 10)
 				{
-					_putchar((i / 10) + '0');
-					_putchar((i % 10) + '0');
-				} else if (i < 10)
-					_putchar(i + '0');
-			} else if (i >= 0 && i < 10)
+					_putchar((r / 10) + '0');
+					_putchar((r % 10) + '0');
+				} else if (r < 10)
+					_putchar(r + '0');
+			} else if (r >= 0 && r < 10)
 				_putchar(i + '0');
-			else if (i >= 10)
+			else if (r >= 10)
 			{
-				_putchar((i / 10) + '0');
-				_putchar((i % 10) + '0');
+				_putchar((r / 10) + '0');
+				_putchar((r % 10) + '0');
 			}
-			if (i != 98)
+			if (r != 98)
 			{
 				_putchar(',');
 				_putchar(' ');
