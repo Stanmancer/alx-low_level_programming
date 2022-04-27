@@ -41,11 +41,11 @@ void print_to_98(int n)
 				_putchar((i / 10) + '0');
 				_putchar((i % 10) + '0');
 			}
-		}
-		while (i != 98)
-		{
-			_putchar(',');
-			_putchar(' ');
+			while (i != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 		greater_than_98(n);
