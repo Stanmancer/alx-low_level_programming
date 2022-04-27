@@ -10,6 +10,7 @@
 void print_to_98(int n)
 {
 	int i;
+	int r;
 
 	if (n == 98)
 	{
