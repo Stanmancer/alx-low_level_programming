@@ -34,20 +34,20 @@ void print_to_98(int n)
 					_putchar((i % 10) + '0');
 				} else if (i < 10)
 					_putchar(i + '0');
-			} else if (i > 0 && i < 10)
+			} else if (i >= 0 && i < 10)
 				_putchar(i + '0');
-			else if (i > 10)
+			else if (i >= 10)
 			{
 				_putchar((i / 10) + '0');
 				_putchar((i % 10) + '0');
 			}
-			_putchar('\n');
 		}
 		while (i != 98)
 		{
 			_putchar(',');
 			_putchar(' ');
 		}
+		_putchar('\n');
 		greater_than_98(n);
 	}
 }
