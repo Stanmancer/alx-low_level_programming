@@ -19,7 +19,8 @@ void print_triangle(int size)
 		{
 			s = size - h;
 			do {
-				_putchar(' ');
+				if (s != 0)
+					_putchar(' ');
 				s--;
 			} while (s > 0);
 			for (i = h; i > 0; i--)
