@@ -12,7 +12,7 @@ int _strcmp(char *s1, char *s2)
 {
 	int a;
 	int cmp;
-	
+
 	cmp = 0;
 
 	for (a = 0; s1[a] != '\0'; a++)
