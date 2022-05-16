@@ -25,7 +25,8 @@ char *cap_string(char *str)
 			(str[a - 1] == '(') ||
 			(str[a - 1] == ')') ||
 			(str[a - 1] == '{') ||
-			(str[a - 1] == '}'))
+			(str[a - 1] == '}') ||
+			a == 0)
 			if (str[a] >= 'a' && str[a] <= 'z')
 				str[a] = str[a] - ' ';
 	}
