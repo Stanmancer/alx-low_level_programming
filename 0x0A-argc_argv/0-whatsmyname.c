@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -9,7 +8,7 @@
  * Return: 0 means sucess
  */
 
-int main(char argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
 	printf("%s\n", argv[0]);
 	return (0);
