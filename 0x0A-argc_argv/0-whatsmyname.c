@@ -9,8 +9,8 @@
  * Return: 0 means sucess
  */
 
-int main (char argc, char *argv[])
+int main(char argc, char *argv[])
 {
 	printf("%s\n", argv[0]);
-	return(0);
+	return (0);
 }
