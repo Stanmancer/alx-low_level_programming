@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * string_nconcat - concatenates string 1 with the first n bytes of string 2
@@ -34,7 +35,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = b;
 
 	/* memory alloc */
-	ptr = malloc(sizeof(*ptr) * (a - 1 + n));
+	ptr = malloc(sizeof(*ptr) * (a + n + 1));
 
 	if (ptr == NULL)
 		return (NULL);
