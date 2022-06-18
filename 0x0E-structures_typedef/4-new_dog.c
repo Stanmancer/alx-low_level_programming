@@ -8,6 +8,8 @@
  *
  * Note: if lenght = n (counting sequeence is 0, 1, 2 ...),
  * actual lenght is n+1 (counting sequence is 1, 2, 3 ...)
+ *
+ * Return: lenght of string passed to function
  */
 
 int _strlen(char *src)
@@ -23,6 +25,7 @@ int _strlen(char *src)
 /**
  * _strcpy - function that copies a string
  * @src: string to be copied
+ * @dest: destination to be copied to
  *
  * Return: pointer to copied string
  */
@@ -31,7 +34,7 @@ char *_strcpy(char *dest, char *src)
 {
 	int i;
 	int b;
-	
+
 	i = _strlen(src);
 
 	for (b = 0; b <= i; b++)
@@ -56,16 +59,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	dog_t *dog;
 
-	dog = malloc(sizeof *dog);
+	dog = malloc(sizeof(*dog));
 	if (dog == NULL)
+	{
+		free(dog);
 		return (NULL);
+	}
 
 	/* name initialization */
 	a = _strlen(name);
-	dog->name = malloc(sizeof *name * a);
+	dog->name = malloc(sizeof(*name) * a);
 
 	if (dog->name == NULL)
+	{
+		free(dog);
 		return (NULL);
+	}
 	_strcpy(dog->name, name);
 
 	/* age initialization */
@@ -73,10 +82,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* owner initialization */
 	b = _strlen(owner);
-	dog->owner = malloc(sizeof *owner * b);
+	dog->owner = malloc(sizeof(*owner) * b);
 
 	if (dog->owner == NULL)
+	{
+		free(dog);
 		return (NULL);
+	}
 	_strcpy(dog->owner, owner);
 
 	return (dog);
