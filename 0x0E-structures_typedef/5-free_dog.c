@@ -8,7 +8,7 @@
  * Return: nothing
  */
 
-void free_dog(gog_t *d)
+void free_dog(dog_t *d)
 {
 	if (d != NULL)
 	{
