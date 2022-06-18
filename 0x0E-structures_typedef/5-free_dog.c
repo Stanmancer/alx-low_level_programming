@@ -3,7 +3,7 @@
 
 /**
  * free_dog - funtion that frees dogs
- * @d: pointer to alloc'd dog 
+ * @d: pointer to alloc'd dog
  *
  * Return: nothing
  */
