@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
-
 /**
  * main - program that multiplies two +ve numbers passed as arguments
  * @argc: argument counter
@@ -14,9 +13,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int j;
-	int num1;
-	int num2;
-	int mul;
+	unsigned long int mul;
 
 	if (argc != 3)
 	{
@@ -32,10 +29,8 @@ int main(int argc, char *argv[])
 				exit(98);
 			}
 
-	num1 = atoi(argv[2]);
-	num2 = atoi(argv[1]);
-	mul = num1 * num2;
+	mul = atoi(argv[1]) * atoi(argv[2]);
 
-	printf("%d\n", mul);
+	printf("%lu\n", mul);
 	return (0);
 }
