@@ -12,38 +12,36 @@
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	int i = 0, j;
+	int i = 0, j, c = 0;
 	char *str;
 	const char spfr[] = "cifs";
 
 	va_start(list, format);
-
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-
 		while (spfr[j] != '\0')
 		{
-			if (i != 0 && format[i] == spfr[j])
+			if ((c == 1) && (format[i] == spfr[j]))
 				printf(", ");
 			j++;
 		}
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(list, int));
+				printf("%c", va_arg(list, int)), c = 1;
 				break;
 			case 'i':
-				printf("%d", va_arg(list, int));
+				printf("%d", va_arg(list, int)), c = 1;
 				break;
 			case 'f':
-				printf("%f", va_arg(list, double));
+				printf("%f", va_arg(list, double)), c = 1;
 				break;
 			case 's':
 				str = va_arg(list, char *);
 				if (str == NULL)
 				{
-					printf("(nil)");
+					printf("(nil)"), c = 1;
 					break;
 				}
 				printf("%s", str);
