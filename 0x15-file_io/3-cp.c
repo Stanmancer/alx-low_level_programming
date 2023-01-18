@@ -2,6 +2,10 @@
 #include <stdio.h>
 
 /**
+ * exit_98 - exit with error 98
+ */
+
+/**
  * cp_file_to_file - copies the content of a file to another file
  * @file_from: pointer to file to be copied from
  * @file_to: pointer to file to be copied to
@@ -11,19 +15,15 @@
 
 void cp_file_to_file(const char *file_from, char *file_to)
 {
-	int fd_from, fd_to, n_text;
+	int fd_from, fd_to, n_text = 1024;
 	int rd, wr, cl_from, cl_to;
-	char *buffer;
+	char buffer[1024];
 
 	for (n_text = 0; file_from[n_text] != '\0'; n_text++)
 	{}
 
-	buffer = malloc(sizeof(char) * n_text);
-	if (buffer == NULL)
-		return;
-
 	fd_from = open(file_from, O_RDONLY);
-	rd = read(fd_from, buffer, n_text);
+	fd_to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 	if (fd_from == -1 || rd == -1)
 	{
@@ -31,8 +31,16 @@ void cp_file_to_file(const char *file_from, char *file_to)
 		exit(98);
 	}
 
-	fd_to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
-	wr = write(fd_to, buffer, rd);
+	while (rd == 1024)
+	{
+		rd = read(fd_from, buffer, 1024);
+		if (rd == -1)
+			exit_98(rd); /* pause: create error function for 98 and 99 */
+
+		wr = write(fd_to, buffer, rd);
+		if (wr == -1)
+			exit_99(wr);
+	}
 
 	if (fd_to == -1 || wr == -1)
 	{
