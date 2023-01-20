@@ -24,8 +24,6 @@ void print_opcode(char *f, int n)
 	}
 
 	putchar('\n');
-
-	return;
 }
 
 /**
